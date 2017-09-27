@@ -30,7 +30,7 @@ class App extends Component {
         <button type="button" className="btn btn-default"
           onClick={() => {
             this.setTag()
-            jQuery.ajax({
+            $.ajax({
               url: 'https://api.flickr.com/services/feeds/photos_public.gne',
               dataType: 'jsonp',
               data: { "tags": this.state.newTag, "format": "json" }
