@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import $ from './jquery-3.2.1.js'
 
 
 class App extends Component {
@@ -29,12 +28,12 @@ class App extends Component {
           />
         <button type="button" className="btn btn-default"
           onClick={() => {
-            this.setTag()
-            $.ajax({
-              url: 'https://api.flickr.com/services/feeds/photos_public.gne',
-              dataType: 'jsonp',
-              data: { "tags": this.state.newTag, "format": "json" }
-            });
+              this.setTag()
+              $.ajax({
+                url: 'https://api.flickr.com/services/feeds/photos_public.gne',
+                dataType: 'jsonp',
+                data: { "tags": this.state.newTag, "format": "json" }
+              });
           }}
           >
           Search!
