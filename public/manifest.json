@@ -1,3 +1,8 @@
+"scripts": {
+  "prestart": "next build",
+  "start": "next start -p ${PORT}",
+}
+
 {
   "short_name": "React App",
   "name": "Create React App Sample",
