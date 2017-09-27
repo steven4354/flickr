@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-//import $ from '/app/node_modules/jquery'
+import $ from './jquery-3.2.1.js'
 
 
 class App extends Component {
