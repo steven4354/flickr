@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import $ from '../jquery-3.2.1.js'
+import $ from 'flickr/node_modules/jquery-3.2.1.js'
 
 
 class App extends Component {
