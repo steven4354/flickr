@@ -1,50 +1,15 @@
-import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
-import $ from 'jquery-3.2.1.js'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
+import App from './components/app';
+import reducers from './reducers';
 
-class App extends Component {
-
-  constructor(props){
-    super(props)
-
-    this.state = {
-      tag: "chipmunks",
-      newTag: ""
-    }
-    console.log('tag', this.state.tag, 'newTag', this.state.newTag);
-  }
-
-  setTag(){
-    this.setState({tag: this.state.newTag}, function () {console.log(this.state.tag)} )
-  }
-
-  render(){
-    return(
-      <div>
-        <input
-          type='text'
-          placeholder='Enter Tag'
-          onChange={event => this.setState({newTag: event.target.value})}
-          />
-        <button type="button" className="btn btn-default"
-          onClick={() => {
-            this.setTag()
-            $.ajax({
-              url: 'https://api.flickr.com/services/feeds/photos_public.gne',
-              dataType: 'jsonp',
-              data: { "tags": this.state.newTag, "format": "json" }
-            });
-          }}
-          >
-          Search!
-        </button>
-      </div>
-  )}
-
-}
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
-  <App></App>,
-  document.getElementById('root')
-)
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>
+  , document.querySelector('.container'));
