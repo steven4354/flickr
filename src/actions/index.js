@@ -5,7 +5,9 @@ const ROOT_URL = 'https://api.flickr.com/services/feeds/photos_public.gne?format
 export const FETCH_PHOTOS = 'FETCH_PHOTOS'
 
 export function fetchPhotos(tag){
-  const url = `${ROOT_URL}&q=${tag}`
+  const url = `${ROOT_URL}${tag}`
+
+  console.log('this is the tag in the fetchPhotos function', tag, url);
 
   const request = fetchJsonp(url, {jsonpCallbackFunction: 'jsonFlickrFeed'})
     .then(function(response) {

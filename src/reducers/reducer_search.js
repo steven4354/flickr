@@ -1,4 +1,7 @@
-export default function(state = null, action){
+import {FETCH_PHOTOS} from '../actions'
+
+export default function(state = [], action){
   console.log('Action recieved', action);
-  return state
+  console.log('test if fetchphotos got imported to reducer', FETCH_PHOTOS);
+  return [action.payload, ...state]
 }

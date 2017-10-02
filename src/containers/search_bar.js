@@ -27,6 +27,8 @@ class SearchBar extends Component {
 
     this.props.fetchPhotos(this.state.term)
 
+    console.log(this.state.term);
+
     this.setState({term: ''})
   }
 
