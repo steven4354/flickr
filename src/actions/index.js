@@ -7,14 +7,15 @@ export const FETCH_PHOTOS = 'FETCH_PHOTOS'
 export function fetchPhotos(tag){
   const url = `${ROOT_URL}&q=${tag}`
 
-  const request = fetchJsonp('/users.jsonp', {
-      jsonpCallbackFunction: 'jsonFlickrFeed'
-    })
+  const request = fetchJsonp(url, {jsonpCallbackFunction: 'jsonFlickrFeed'})
     .then(function(response) {
       return response.json()
-    }).then(function(json) {
+    })
+    .then(function(json) {
       console.log('parsed json', json)
-    }).catch(function(ex) {
+      return json
+    })
+    .catch(function(ex) {
       console.log('parsing failed', ex)
     })
 
