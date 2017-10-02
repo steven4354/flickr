@@ -21,24 +21,14 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-      function jsonFlickrFeed(json) {
-        console.log(json);
-
-        $( "#images" ).empty()
-        $.each(json.items, function(i, item) {
-          $("<img class=\"img-thumbnail\" width=\"204\" height=\"206\"></img>").attr("src", item.media.m).appendTo("#images");
-        });
-      };
-    </script>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
-    <div id="images"></div>
+    <div class="container"></div>
+    <script src="/bundle.js"></script>
+
 
     <!--
       This HTML file is a template.
