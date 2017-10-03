@@ -13,7 +13,7 @@ class HistoryButton extends Component {
     else if (this.props.photos.length == 2) {
       return(
         <div>
-          Here are you're recent searches:
+          Here are your recent searches:
           <ul>
             <li>{this.props.photos[0].title}</li>
           </ul>
@@ -23,7 +23,7 @@ class HistoryButton extends Component {
     else if (this.props.photos.length == 3) {
       return(
         <div>
-          Here are you're recent searches:
+          Here are your recent searches:
           <ul>
             <li>{this.props.photos[0].title}</li>
             <li>{this.props.photos[1].title}</li>
@@ -34,7 +34,7 @@ class HistoryButton extends Component {
 
     return(
       <div>
-        Here are you're recent searches:
+        Here are your recent searches:
         <ul>
           <li>{this.props.photos[0].title}</li>
           <li>{this.props.photos[1].title}</li>
