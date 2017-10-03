@@ -8,5 +8,8 @@ Also added a feature to show the application state in action. The app will conti
 
 Let me know if there's anything else I should change! 
 
+Best,
+Steven 
+
 ![Alt text](demo4.png?raw=true "Title")
 
