@@ -5,4 +5,5 @@ const rootReducer = combineReducers({
   photos: SearchReducer
 });
 
+//[{}] 
 export default rootReducer;
